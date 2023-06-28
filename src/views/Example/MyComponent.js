@@ -5,6 +5,23 @@ class MyComponent extends React.Component {
     state = {
         firstName: '',
         LastName: '',
+        arrJobs: [
+            {
+                id: 'stt1',
+                title: 'dev',
+                salary: '2000$'
+            },
+            {
+                id: 'stt2',
+                title: 'manager',
+                salary: '25000$'
+            },
+            {
+                id: 'stt3',
+                title: 'tester',
+                salary: '23000$'
+            },
+        ]
     }
 
     handlefirstName = (event) => {
@@ -38,7 +55,10 @@ class MyComponent extends React.Component {
                 </form>
 
 
-                <ChildComponent></ChildComponent>
+                <ChildComponent
+                    name={this.state.firstName}
+                    age={'12'}
+                    abc={this.state.arrJobs}></ChildComponent>
             </>
 
         )

@@ -23,11 +23,22 @@ class ChildComponent extends React.Component {
         console.log('>>> Data : ', this.state)
     }
     render() {
+        console.log('check props', this.props)
+        let { name, age, abc } = this.props;
         return (
+
             <>
-                <div>Đăng Ky</div>
-
-
+                <div className="job-lists">
+                    {
+                        abc.map((item, index) => {
+                            return (
+                                <div key={item.id}>
+                                    {item.title} - {item.salary}
+                                </div>
+                            )
+                        })
+                    }
+                </div>
 
             </>
 
